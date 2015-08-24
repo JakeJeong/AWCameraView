@@ -11,31 +11,22 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 
-
-/**
- Defines a key for the "meta" dictionary as returned in JBCameraViewDelegate#cameraView:didFinishTakingPicture:withInfo:meta
-
- @see JBCameraViewMetaCrop
- @see JBCameraViewMetaOriginalImage
- */
-typedef NSString* JBCameraViewMeta;
-
 /**
  Key to get a CGRect object, the rectangle in which the full resolution image was cropped at.
  */
-extern JBCameraViewMeta const JBCameraViewMetaCrop;
+extern NSString * const JBCameraViewMetaCrop;
 
 /**
  Key to get a UIImage object, the full resolution image as taken by the camera.
  */
-extern JBCameraViewMeta const JBCameraViewMetaOriginalImage;
+extern NSString * const JBCameraViewMetaOriginalImage;
 
 @class JBCameraView;
 
 @protocol JBCameraViewDelegate <NSObject>
 
 /**
- Implement to get a callaback on the main thread with the image on JBCameraView#takePicture: only if an error didn't
+ Implement to get a callback on the main thread with the image on JBCameraView#takePicture: only if an error didn't
  occur.
 
  @param cameraView the JBCameraView intance that this delegate is assigned to
@@ -44,7 +35,7 @@ extern JBCameraViewMeta const JBCameraViewMetaOriginalImage;
  @param meta
  @see JBCameraViewMeta
  */
--(void)cameraView:(JBCameraView*)cameraView didFinishTakingPicture:(UIImage *)image withInfo:(NSDictionary*)info meta:(NSDictionary *)meta;
+- (void)cameraView:(JBCameraView *)cameraView didFinishTakingPicture:(UIImage *)image withInfo:(NSDictionary*)info meta:(NSDictionary *)meta;
 
 /**
  Implement to get a callaback on the main thread if an error occurs on JBCameraView#takePicture:
@@ -52,7 +43,7 @@ extern JBCameraViewMeta const JBCameraViewMetaOriginalImage;
  @param cameraView the JBCameraView intance that this delegate is assigned to
  @param error the error as returned by AVCaptureSession#captureStillImageAsynchronouslyFromConnection:completionHandler:
  */
--(void)cameraView:(JBCameraView *)cameraView didErrorOnTakePicture:(NSError *)error;
+- (void)cameraView:(JBCameraView *)cameraView didErrorOnTakePicture:(NSError *)error;
 
 @optional
 /**
@@ -68,7 +59,7 @@ extern JBCameraViewMeta const JBCameraViewMetaOriginalImage;
  @param captureConnection the AVCaptureConnection instance that will be used to capture the image
  @see AVCaptureSession#captureStillImageAsynchronouslyFromConnection:completionHandler:
  */
--(void)cameraView:(JBCameraView*)cameraView didCreateCaptureConnection:(AVCaptureConnection*)captureConnection;
+- (void)cameraView:(JBCameraView *)cameraView didCreateCaptureConnection:(AVCaptureConnection *)captureConnection;
 
 /**
  Implement if JBCameraView.allowPictureRetake is set to YES.
@@ -78,7 +69,7 @@ extern JBCameraViewMeta const JBCameraViewMetaOriginalImage;
  @param cameraView the JBCameraView intance that this delegate is assigned to.
  @param image current image currently previewing.
  */
--(void)cameraView:(JBCameraView*)cameraView willRetakePicture:(UIImage *)image;
+- (void)cameraView:(JBCameraView *)cameraView willRetakePicture:(UIImage *)image;
 
 /**
  Implement if JBCameraView.writeToCameraRoll is set to YES.
@@ -88,7 +79,7 @@ extern JBCameraViewMeta const JBCameraViewMetaOriginalImage;
  @param cameraView the JBCameraView instance this delegate is assigned to
  @param metadata the metadata instance that will be used to capture the image
  */
--(void)cameraView:(JBCameraView*)cameraView willRriteToCameraRollWithMetadata:(NSDictionary *)metadata;
+- (void)cameraView:(JBCameraView *)cameraView willWriteToCameraRollWithMetadata:(NSDictionary *)metadata;
 
 @end
 
@@ -102,15 +93,7 @@ extern JBCameraViewMeta const JBCameraViewMetaOriginalImage;
  Portrait, iPhone only orientation
  @see
  */
-@interface JBCameraView : UIView <JBCameraViewDelegate>
-
-/**
- Set to true to get a callaback to configure AVCaptureConnection
-
- @precondition have delegate set
- @precondition have cameraView:didCreateCaptureConnection: implemented
- */
-@property(nonatomic, assign) BOOL callbackOnDidCreateCaptureConnection;
+@interface JBCameraView : UIView
 
 /**
  Set to true to allow the user to retake a photo by tapping on the preview
@@ -118,17 +101,17 @@ extern JBCameraViewMeta const JBCameraViewMetaOriginalImage;
  @precondition have delegate set
  @precondition have cameraView:didCreateCaptureConnection: implemented
  */
-@property(nonatomic, assign) BOOL allowPictureRetake;
+@property (assign, nonatomic) BOOL allowPictureRetake;
 
 
 ///
-@property(nonatomic, assign) BOOL writeToCameraRoll;
+@property (assign, nonatomic) BOOL writeToCameraRoll;
 
 
 /**
 
  */
-@property(nonatomic, assign) IBOutlet NSObject<JBCameraViewDelegate>* delegate;
+@property (assign, nonatomic) IBOutlet id <JBCameraViewDelegate> delegate;
 
 
 /**
@@ -137,7 +120,7 @@ extern JBCameraViewMeta const JBCameraViewMetaOriginalImage;
     backgroundColor = [UIColor whiteColor];
 
  */
-@property(nonatomic, strong) UIView *flashView;
+@property (strong, nonatomic) UIView *flashView;
 
 
 /**
@@ -157,6 +140,6 @@ extern JBCameraViewMeta const JBCameraViewMetaOriginalImage;
 
  @callback on the main thread at JBCameraViewDelegate#cameraView:willRetakePicture:
  */
-- (void) retakePicture;
+- (void)retakePicture;
 
 @end
