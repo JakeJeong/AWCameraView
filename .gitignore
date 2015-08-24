@@ -1,0 +1,27 @@
+# OS Stuff
+*~
+.DS_Store
+.Trashes
+*.swp
+
+# Xcode 4+
+DerivedData/
+build/
+*.pbxuser
+*.mode1
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+xcuserdata
+*.xcworkspace
+*.moved-aside
+
+# Defaults
+!default.pbxuser
+!default.mode1v3
+!default.mode2v3
+!default.perspectivev3
+
+# CocoaPods
+Pods/
+Podfile.lock
