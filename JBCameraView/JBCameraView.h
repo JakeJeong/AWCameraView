@@ -3,6 +3,7 @@
 //  JBCameraView
 //
 //  Created by Markos Charatzas on 25/06/2013.
+//  Copyright (c) 2015 Cuvva Limited
 //  Copyright (c) 2013 www.verylargebox.com
 //
 
