@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BDBD0B2D17899C49003A7B23 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDBD0B2C17899C49003A7B23 /* CoreImage.framework */; };
-		BDBD0B2F17899C4E003A7B23 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDBD0B2E17899C4E003A7B23 /* AssetsLibrary.framework */; };
 		BDBD0B591789A26E003A7B23 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDBD0B571789A265003A7B23 /* CoreGraphics.framework */; };
 		BDBD0B5B1789A28D003A7B23 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDBD0B5A1789A28D003A7B23 /* CoreMedia.framework */; };
 		BDFD0A931789800700DF1A90 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDFD0A921789800700DF1A90 /* Foundation.framework */; };
@@ -18,8 +16,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BDBD0B2C17899C49003A7B23 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
-		BDBD0B2E17899C4E003A7B23 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		BDBD0B571789A265003A7B23 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		BDBD0B5A1789A28D003A7B23 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		BDFD0A8F1789800700DF1A90 /* libJBCameraView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJBCameraView.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,9 +34,7 @@
 			files = (
 				BDBD0B5B1789A28D003A7B23 /* CoreMedia.framework in Frameworks */,
 				BDBD0B591789A26E003A7B23 /* CoreGraphics.framework in Frameworks */,
-				BDBD0B2F17899C4E003A7B23 /* AssetsLibrary.framework in Frameworks */,
 				BDFD0AD5178981AE00DF1A90 /* AVFoundation.framework in Frameworks */,
-				BDBD0B2D17899C49003A7B23 /* CoreImage.framework in Frameworks */,
 				BDFD0A931789800700DF1A90 /* Foundation.framework in Frameworks */,
 				BDFD0AD3178981A800DF1A90 /* UIKit.framework in Frameworks */,
 			);
@@ -71,8 +65,6 @@
 			children = (
 				BDBD0B5A1789A28D003A7B23 /* CoreMedia.framework */,
 				BDBD0B571789A265003A7B23 /* CoreGraphics.framework */,
-				BDBD0B2E17899C4E003A7B23 /* AssetsLibrary.framework */,
-				BDBD0B2C17899C49003A7B23 /* CoreImage.framework */,
 				BDFD0AD4178981AE00DF1A90 /* AVFoundation.framework */,
 				BDFD0AD2178981A800DF1A90 /* UIKit.framework */,
 				BDFD0A921789800700DF1A90 /* Foundation.framework */,

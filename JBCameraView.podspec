@@ -15,5 +15,5 @@ Pod::Spec.new do |s|
 	s.public_header_files = 'JBCameraView/*.h'
 	s.resources = 'JBCameraView/*.xib'
 
-	s.frameworks = 'Foundation', 'UIKit', 'AVFoundation', 'CoreImage', 'CoreMedia', 'CoreGraphics', 'AssetsLibrary'
+	s.frameworks = 'Foundation', 'UIKit', 'AVFoundation', 'CoreMedia', 'CoreGraphics'
 end
