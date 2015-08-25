@@ -16,8 +16,7 @@
 @property (nonatomic, strong) AVCaptureStillImageOutput *stillImageOutput;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *videoPreviewLayer;
 @property (nonatomic, strong) AVCaptureConnection *stillImageConnection;
-
-@property (nonatomic, weak) IBOutlet UIImageView *preview;
+@property (nonatomic, strong) UIImageView *preview;
 
 @end
 
@@ -25,9 +24,9 @@
 
 - (void)commonInit
 {
-  NSBundle *bundle = [NSBundle mainBundle];
-  NSArray *views = [bundle loadNibNamed:NSStringFromClass([self class]) owner:self options:nil];
-  [self addSubview:views[0]];
+  CGRect frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+  self.preview = [[UIImageView alloc] initWithFrame:frame];
+  [self addSubview:self.preview];
 
   self.session = [AVCaptureSession new];
   self.session.sessionPreset = AVCaptureSessionPresetPhoto;
