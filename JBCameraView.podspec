@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 	s.name = 'JBCameraView'
-	s.version = '0.1.0'
+	s.version = '0.1.1'
 	s.summary = 'UIView to show the camera, take a picture, preview it, return UIImage'
 	s.homepage = 'https://github.com/billinghamj/JBCameraView'
 	s.license = 'MIT'

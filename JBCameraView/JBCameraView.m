@@ -24,10 +24,6 @@
 
 - (void)commonInit
 {
-  CGRect frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-  self.preview = [[UIImageView alloc] initWithFrame:frame];
-  [self addSubview:self.preview];
-
   self.session = [AVCaptureSession new];
   self.session.sessionPreset = AVCaptureSessionPresetPhoto;
 
@@ -37,7 +33,6 @@
 
   self.videoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
   self.videoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-  self.videoPreviewLayer.frame = self.layer.bounds;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -66,9 +61,20 @@
 
   self.position = JBCameraViewPositionBack;
 
-  [self.layer addSublayer:self.videoPreviewLayer];
-
   [self.session startRunning];
+}
+
+- (void)layoutSubviews
+{
+  [super layoutSubviews];
+
+  CGRect frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+
+  self.preview = [[UIImageView alloc] initWithFrame:frame];
+  [self addSubview:self.preview];
+
+  self.videoPreviewLayer.frame = frame;
+  [self.layer addSublayer:self.videoPreviewLayer];
 }
 
 - (void)takePicture
