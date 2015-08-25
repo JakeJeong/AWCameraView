@@ -141,6 +141,9 @@
     [NSException raise:str format:@"%@", error.localizedDescription];
   }
 
+  for (AVCaptureDeviceInput *input in self.session.inputs)
+    [self.session removeInput:input];
+
   [self.session addInput:deviceInput];
 }
 
