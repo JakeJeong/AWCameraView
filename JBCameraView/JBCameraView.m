@@ -59,7 +59,7 @@
 
 - (void)awakeFromNib
 {
-  AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+  AVCaptureDevice *device = [self getCameraWithPosition:AVCaptureDevicePositionBack];
 
   if ([device lockForConfiguration:nil])
   {
@@ -130,6 +130,19 @@
 {
   self.preview.image = nil;
   [self.session startRunning];
+}
+
+- (AVCaptureDevice *)getCameraWithPosition:(AVCaptureDevicePosition)position
+{
+  NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
+
+  for (AVCaptureDevice *device in devices)
+  {
+    if (device.position == position)
+      return device;
+  }
+
+  return nil;
 }
 
 @end
