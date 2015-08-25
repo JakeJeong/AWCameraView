@@ -62,32 +62,6 @@
 {
   [super awakeFromNib];
 
-  AVCaptureDevice *device = [self getCameraWithPosition:self.position];
-
-  if (!device)
-    [NSException raise:@"CameraUnavailable" format:@"Failed to get a camera with the required position"];
-
-  if ([device lockForConfiguration:nil])
-  {
-    if ([device isFocusModeSupported:AVCaptureFocusModeContinuousAutoFocus])
-      device.focusMode = AVCaptureFocusModeContinuousAutoFocus;
-
-    if ([device isFlashModeSupported:AVCaptureFlashModeAuto])
-      device.flashMode = AVCaptureFlashModeAuto;
-
-    [device unlockForConfiguration];
-  }
-
-  NSError *error;
-  AVCaptureDeviceInput *deviceInput;
-  if (!(deviceInput = [AVCaptureDeviceInput deviceInputWithDevice:device error:&error]))
-  {
-    NSString *str = [NSString stringWithFormat:@"Failed with error %d", (int)error.code];
-    [NSException raise:str format:@"%@", error.localizedDescription];
-  }
-
-  [self.session addInput:deviceInput];
-
   self.stillImageOutput = [AVCaptureStillImageOutput new];
   self.stillImageOutput.outputSettings = @{AVVideoCodecKey:AVVideoCodecJPEG};
   [self.session addOutput:self.stillImageOutput];
@@ -137,6 +111,37 @@
     self.preview.image = nil;
     [self.session startRunning];
   });
+}
+
+- (void)setPosition:(JBCameraViewPosition)position
+{
+  _position = position;
+
+  AVCaptureDevice *device = [self getCameraWithPosition:self.position];
+
+  if (!device)
+    [NSException raise:@"CameraUnavailable" format:@"Failed to get a camera with the required position"];
+
+  if ([device lockForConfiguration:nil])
+  {
+    if ([device isFocusModeSupported:AVCaptureFocusModeContinuousAutoFocus])
+      device.focusMode = AVCaptureFocusModeContinuousAutoFocus;
+
+    if ([device isFlashModeSupported:AVCaptureFlashModeAuto])
+      device.flashMode = AVCaptureFlashModeAuto;
+
+    [device unlockForConfiguration];
+  }
+
+  NSError *error;
+  AVCaptureDeviceInput *deviceInput;
+  if (!(deviceInput = [AVCaptureDeviceInput deviceInputWithDevice:device error:&error]))
+  {
+    NSString *str = [NSString stringWithFormat:@"Failed with error %d", (int)error.code];
+    [NSException raise:str format:@"%@", error.localizedDescription];
+  }
+
+  [self.session addInput:deviceInput];
 }
 
 - (AVCaptureDevice *)getCameraWithPosition:(JBCameraViewPosition)position
