@@ -31,6 +31,10 @@
   self.session = [AVCaptureSession new];
   self.session.sessionPreset = AVCaptureSessionPresetPhoto;
 
+  self.stillImageOutput = [AVCaptureStillImageOutput new];
+  self.stillImageOutput.outputSettings = @{AVVideoCodecKey:AVVideoCodecJPEG};
+  [self.session addOutput:self.stillImageOutput];
+
   self.videoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
   self.videoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
   self.videoPreviewLayer.frame = self.layer.bounds;
@@ -61,10 +65,6 @@
   [super awakeFromNib];
 
   self.position = JBCameraViewPositionBack;
-
-  self.stillImageOutput = [AVCaptureStillImageOutput new];
-  self.stillImageOutput.outputSettings = @{AVVideoCodecKey:AVVideoCodecJPEG};
-  [self.session addOutput:self.stillImageOutput];
 
   [self.layer addSublayer:self.videoPreviewLayer];
 
