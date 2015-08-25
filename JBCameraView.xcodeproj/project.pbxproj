@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A0D67E71B8C85CE00CCF7A5 /* JBCameraView.h in Headers */ = {isa = PBXBuildFile; fileRef = BDFD0ACC1789816200DF1A90 /* JBCameraView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BDBD0B591789A26E003A7B23 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDBD0B571789A265003A7B23 /* CoreGraphics.framework */; };
 		BDBD0B5B1789A28D003A7B23 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDBD0B5A1789A28D003A7B23 /* CoreMedia.framework */; };
 		BDFD0A931789800700DF1A90 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDFD0A921789800700DF1A90 /* Foundation.framework */; };
@@ -82,6 +83,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		1A0D67E61B8C85C600CCF7A5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A0D67E71B8C85CE00CCF7A5 /* JBCameraView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		BDFD0A8E1789800700DF1A90 /* JBCameraView */ = {
 			isa = PBXNativeTarget;
@@ -89,6 +101,7 @@
 			buildPhases = (
 				BDFD0A8B1789800700DF1A90 /* Sources */,
 				BDFD0A8C1789800700DF1A90 /* Frameworks */,
+				1A0D67E61B8C85C600CCF7A5 /* Headers */,
 			);
 			buildRules = (
 			);
