@@ -63,6 +63,9 @@
 
   AVCaptureDevice *device = [self getCameraWithPosition:AVCaptureDevicePositionBack];
 
+  if (!device)
+    [NSException raise:@"CameraUnavailable" format:@"Failed to get a camera with the required position"];
+
   if ([device lockForConfiguration:nil])
   {
     if ([device isFocusModeSupported:AVCaptureFocusModeContinuousAutoFocus])
