@@ -24,8 +24,6 @@
 
 - (void)commonInit
 {
-  self.position = JBCameraViewPositionBack;
-
   CGRect frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
   self.preview = [[UIImageView alloc] initWithFrame:frame];
   [self addSubview:self.preview];
@@ -61,6 +59,8 @@
 - (void)awakeFromNib
 {
   [super awakeFromNib];
+
+  self.position = JBCameraViewPositionBack;
 
   self.stillImageOutput = [AVCaptureStillImageOutput new];
   self.stillImageOutput.outputSettings = @{AVVideoCodecKey:AVVideoCodecJPEG};
