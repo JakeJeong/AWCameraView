@@ -59,6 +59,8 @@
 
 - (void)awakeFromNib
 {
+  [super awakeFromNib];
+
   AVCaptureDevice *device = [self getCameraWithPosition:AVCaptureDevicePositionBack];
 
   if ([device lockForConfiguration:nil])
