@@ -89,6 +89,7 @@
   [self.session addInput:deviceInput];
 
   self.stillImageOutput = [AVCaptureStillImageOutput new];
+  self.stillImageOutput.outputSettings = @{AVVideoCodecKey:AVVideoCodecJPEG};
   [self.session addOutput:self.stillImageOutput];
 
   [self.layer addSublayer:self.videoPreviewLayer];
@@ -104,8 +105,6 @@
 
 - (void)takePicture
 {
-  [self.stillImageOutput setOutputSettings:@{AVVideoCodecKey:AVVideoCodecJPEG}];
-
   __weak JBCameraView *weakSelf = self;
 
   [self.stillImageOutput
