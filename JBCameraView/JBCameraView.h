@@ -40,7 +40,7 @@ typedef NS_ENUM(NSUInteger, JBCameraViewPosition)
 /// Delegate for receiving events
 @property (weak, nonatomic) IBOutlet id <JBCameraViewDelegate> delegate;
 
-/// The camera being used - front or back
+/// The camera being used - front or back; defaults to back
 @property (assign, nonatomic) JBCameraViewPosition position;
 
 /// Takes a still image of the current frame from the video feed
