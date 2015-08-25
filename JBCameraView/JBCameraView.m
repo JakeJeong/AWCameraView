@@ -60,7 +60,7 @@
 {
   [super awakeFromNib];
 
-  AVCaptureDevice *device = [self getCameraWithPosition:JBCameraViewPositionBack];
+  AVCaptureDevice *device = [self getCameraWithPosition:self.position];
 
   if (!device)
     [NSException raise:@"CameraUnavailable" format:@"Failed to get a camera with the required position"];
