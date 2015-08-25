@@ -11,6 +11,12 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 
+typedef NS_ENUM(NSUInteger, JBCameraViewPosition)
+{
+  JBCameraViewPositionBack = 0,
+  JBCameraViewPositionFront
+};
+
 @class JBCameraView;
 
 @protocol JBCameraViewDelegate <NSObject>

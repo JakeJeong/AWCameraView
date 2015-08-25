@@ -60,7 +60,7 @@
 {
   [super awakeFromNib];
 
-  AVCaptureDevice *device = [self getCameraWithPosition:AVCaptureDevicePositionBack];
+  AVCaptureDevice *device = [self getCameraWithPosition:JBCameraViewPositionBack];
 
   if (!device)
     [NSException raise:@"CameraUnavailable" format:@"Failed to get a camera with the required position"];
@@ -136,17 +136,28 @@
   [self.session startRunning];
 }
 
-- (AVCaptureDevice *)getCameraWithPosition:(AVCaptureDevicePosition)position
+- (AVCaptureDevice *)getCameraWithPosition:(JBCameraViewPosition)position
 {
+  AVCaptureDevicePosition avPosition = [self avPositionForPosition:position];
   NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
 
   for (AVCaptureDevice *device in devices)
   {
-    if (device.position == position)
+    if (device.position == avPosition)
       return device;
   }
 
   return nil;
+}
+
+- (AVCaptureDevicePosition)avPositionForPosition:(JBCameraViewPosition)position
+{
+  switch (position)
+  {
+    case JBCameraViewPositionBack: return AVCaptureDevicePositionBack;
+    case JBCameraViewPositionFront: return AVCaptureDevicePositionFront;
+    default: [NSException raise:@"InvalidPosition" format:@"Invalid position"];
+  }
 }
 
 @end
