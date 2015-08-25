@@ -32,7 +32,7 @@
 @interface JBCameraView : UIView
 
 /// Delegate for receiving events
-@property (assign, nonatomic) IBOutlet id <JBCameraViewDelegate> delegate;
+@property (weak, nonatomic) IBOutlet id <JBCameraViewDelegate> delegate;
 
 /// Takes a still image of the current frame from the video feed
 - (void)takePicture;
