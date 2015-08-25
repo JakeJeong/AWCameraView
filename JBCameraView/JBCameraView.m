@@ -23,7 +23,7 @@
 
 @implementation JBCameraView
 
-- (void)commonSetup
+- (void)commonInit
 {
   NSBundle *bundle = [NSBundle mainBundle];
   NSArray *views = [bundle loadNibNamed:NSStringFromClass([self class]) owner:self options:nil];
@@ -42,7 +42,7 @@
   if (!(self = [super initWithFrame:frame]))
     return nil;
 
-  [self commonSetup];
+  [self commonInit];
 
   return self;
 }
@@ -52,7 +52,7 @@
   if (!(self = [super initWithCoder:aDecoder]))
     return nil;
 
-  [self commonSetup];
+  [self commonInit];
 
   return self;
 }
