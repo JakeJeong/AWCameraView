@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1A0D67E71B8C85CE00CCF7A5 /* JBCameraView.h in Headers */ = {isa = PBXBuildFile; fileRef = BDFD0ACC1789816200DF1A90 /* JBCameraView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A0D67E81B8C85CE00CCF7A5 /* JBCameraViewPosition.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A0D67E41B8C847F00CCF7A5 /* JBCameraViewPosition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A0D67E91B8C85CE00CCF7A5 /* JBCameraViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A0D67E51B8C84A900CCF7A5 /* JBCameraViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BDBD0B591789A26E003A7B23 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDBD0B571789A265003A7B23 /* CoreGraphics.framework */; };
 		BDBD0B5B1789A28D003A7B23 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDBD0B5A1789A28D003A7B23 /* CoreMedia.framework */; };
 		BDFD0A931789800700DF1A90 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDFD0A921789800700DF1A90 /* Foundation.framework */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A0D67E41B8C847F00CCF7A5 /* JBCameraViewPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBCameraViewPosition.h; sourceTree = "<group>"; };
+		1A0D67E51B8C84A900CCF7A5 /* JBCameraViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBCameraViewDelegate.h; sourceTree = "<group>"; };
 		BDBD0B571789A265003A7B23 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		BDBD0B5A1789A28D003A7B23 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		BDFD0A8F1789800700DF1A90 /* libJBCameraView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJBCameraView.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +81,8 @@
 			children = (
 				BDFD0ACC1789816200DF1A90 /* JBCameraView.h */,
 				BDFD0ACD1789816200DF1A90 /* JBCameraView.m */,
+				1A0D67E41B8C847F00CCF7A5 /* JBCameraViewPosition.h */,
+				1A0D67E51B8C84A900CCF7A5 /* JBCameraViewDelegate.h */,
 			);
 			path = JBCameraView;
 			sourceTree = "<group>";
@@ -89,6 +95,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A0D67E71B8C85CE00CCF7A5 /* JBCameraView.h in Headers */,
+				1A0D67E81B8C85CE00CCF7A5 /* JBCameraViewPosition.h in Headers */,
+				1A0D67E91B8C85CE00CCF7A5 /* JBCameraViewDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
