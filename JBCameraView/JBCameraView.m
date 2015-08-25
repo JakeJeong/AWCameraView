@@ -133,8 +133,10 @@
 
 - (void)retakePicture
 {
-  self.preview.image = nil;
-  [self.session startRunning];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    self.preview.image = nil;
+    [self.session startRunning];
+  });
 }
 
 - (AVCaptureDevice *)getCameraWithPosition:(JBCameraViewPosition)position
