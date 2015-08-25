@@ -69,12 +69,6 @@
   [self.layer addSublayer:self.videoPreviewLayer];
 
   [self.session startRunning];
-
-  self.stillImageConnection = [self.stillImageOutput connectionWithMediaType:AVMediaTypeVideo];
-  self.stillImageConnection.videoOrientation = AVCaptureVideoOrientationPortrait;
-
-  if ([self.delegate respondsToSelector:@selector(cameraView:didCreateCaptureConnection:)])
-    [self.delegate cameraView:self didCreateCaptureConnection:self.stillImageConnection];
 }
 
 - (void)takePicture
@@ -145,6 +139,12 @@
     [self.session removeInput:input];
 
   [self.session addInput:deviceInput];
+
+  self.stillImageConnection = [self.stillImageOutput connectionWithMediaType:AVMediaTypeVideo];
+  self.stillImageConnection.videoOrientation = AVCaptureVideoOrientationPortrait;
+
+  if ([self.delegate respondsToSelector:@selector(cameraView:didCreateCaptureConnection:)])
+    [self.delegate cameraView:self didCreateCaptureConnection:self.stillImageConnection];
 }
 
 - (AVCaptureDevice *)getCameraWithPosition:(JBCameraViewPosition)position
