@@ -120,7 +120,7 @@
   AVCaptureDevice *device = [self getCameraWithPosition:self.position];
 
   if (!device)
-    [NSException raise:@"CameraUnavailable" format:@"Failed to get a camera with the required position"];
+    [NSException raise:@"CameraUnavailable" format:@"Failed to get a capture device"];
 
   if ([device lockForConfiguration:nil])
   {
@@ -164,7 +164,7 @@
       return device;
   }
 
-  return nil;
+  return devices.firstObject;
 }
 
 - (AVCaptureDevicePosition)avPositionForPosition:(JBCameraViewPosition)position
