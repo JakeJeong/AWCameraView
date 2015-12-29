@@ -10,7 +10,7 @@
 #import "JBCameraView.h"
 #import <AVFoundation/AVFoundation.h>
 
-@interface JBCameraView ()
+@interface JBCameraView () <UIAlertViewDelegate>
 
 @property (nonatomic, strong) AVCaptureSession *session;
 @property (nonatomic, strong) AVCaptureStillImageOutput *stillImageOutput;
@@ -113,8 +113,39 @@
   });
 }
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+  if (buttonIndex == alertView.cancelButtonIndex)
+    [self setPosition:_position];
+
+  if (buttonIndex == alertView.firstOtherButtonIndex)
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+}
+
 - (void)setPosition:(JBCameraViewPosition)position
 {
+  AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+
+  if (status == AVAuthorizationStatusNotDetermined)
+  {
+    [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
+      [self setPosition:_position];
+    }];
+    return;
+  }
+
+  if (status != AVAuthorizationStatusAuthorized)
+  {
+    [[[UIAlertView alloc]
+      initWithTitle:@"Camera Required"
+      message:@"To continue, you must allow access to the camera."
+      delegate:self
+      cancelButtonTitle:@"Try Again"
+      otherButtonTitles:@"Settings", nil]
+     show];
+    return;
+  }
+
   _position = position;
 
   AVCaptureDevice *device = [self getCameraWithPosition:self.position];
