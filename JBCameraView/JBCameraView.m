@@ -116,7 +116,7 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
   if (buttonIndex == alertView.cancelButtonIndex)
-    [self setPosition:_position];
+    [self setPosition:self.position];
 
   if (buttonIndex == alertView.firstOtherButtonIndex)
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
@@ -131,7 +131,7 @@
   if (status == AVAuthorizationStatusNotDetermined)
   {
     [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
-      [self setPosition:_position];
+      [self setPosition:self.position];
     }];
     return;
   }
