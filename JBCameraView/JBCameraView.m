@@ -124,6 +124,8 @@
 
 - (void)setPosition:(JBCameraViewPosition)position
 {
+  _position = position;
+
   AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
 
   if (status == AVAuthorizationStatusNotDetermined)
@@ -145,8 +147,6 @@
      show];
     return;
   }
-
-  _position = position;
 
   AVCaptureDevice *device = [self getCameraWithPosition:self.position];
 
