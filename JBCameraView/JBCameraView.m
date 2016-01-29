@@ -59,8 +59,6 @@
 {
   [super awakeFromNib];
 
-  self.position = JBCameraViewPositionBack;
-
   [self.session startRunning];
 }
 

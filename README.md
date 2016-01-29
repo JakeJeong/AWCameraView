@@ -7,10 +7,13 @@ default camera controls, it gives you no control over its camera bounds. Instead
 it captures a UIImage in full camera resolution, giving you the option to edit
 as a second step.
 
+Note: as of v0.3.0, you must specify the camera position before the camera will
+activate.
+
 ## Installation
 
 ```ruby
-pod 'JBCameraView', '~> 0.1.0'
+pod 'JBCameraView'
 ```
 
 ## Usage
@@ -19,6 +22,7 @@ pod 'JBCameraView', '~> 0.1.0'
 
 * Drag a UIView into the interface and set its type to `JBCameraView`
 * Set its delegate to a class that implements `JBCameraViewDelegate`
+* Set the preferred camera position (will failover to the other one)
 * Call `takePicture` on `JBCameraView` the UIImage on your delegate
 
 ### Code
@@ -26,6 +30,7 @@ pod 'JBCameraView', '~> 0.1.0'
 ```objc
 JBCameraView *cameraView = [[JBCameraView alloc] initWithFrame:CGRect(320, 320)];
 cameraView.delegate = self;
+cameraView.position = JBCameraViewPositionBack;
 
 [cameraView takePicture];
 ```
