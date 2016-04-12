@@ -1,4 +1,4 @@
-# `AWCameraView`
+# `AWCameraView` (fork of JBCameraView)
 
 UIView to show the camera, take a picture, preview it, return UIImage.
 
