@@ -1,4 +1,4 @@
-# `JBCameraView`
+# `AWCameraView`
 
 UIView to show the camera, take a picture, preview it, return UIImage.
 
@@ -13,24 +13,24 @@ activate.
 ## Installation
 
 ```ruby
-pod 'JBCameraView'
+pod 'AWCameraView'
 ```
 
 ## Usage
 
 ### Interface Builder
 
-* Drag a UIView into the interface and set its type to `JBCameraView`
-* Set its delegate to a class that implements `JBCameraViewDelegate`
+* Drag a UIView into the interface and set its type to `AWCameraView`
+* Set its delegate to a class that implements `AWCameraViewDelegate`
 * Set the preferred camera position (will failover to the other one)
-* Call `takePicture` on `JBCameraView` the UIImage on your delegate
+* Call `takePicture` on `AWCameraView` the UIImage on your delegate
 
 ### Code
 
 ```objc
-JBCameraView *cameraView = [[JBCameraView alloc] initWithFrame:CGRect(320, 320)];
+AWCameraView *cameraView = [[AWCameraView alloc] initWithFrame:CGRect(320, 320)];
 cameraView.delegate = self;
-cameraView.position = JBCameraViewPositionBack;
+cameraView.position = AWCameraViewPositionBack;
 
 [cameraView takePicture];
 ```
@@ -38,11 +38,6 @@ cameraView.position = JBCameraViewPositionBack;
 ## Support
 
 Please open an issue on this repository.
-
-## Authors
-
-- James Billingham <james@jamesbillingham.com>
-- Markos Charatzas <markos@qnoid.com>
 
 ## License
 
