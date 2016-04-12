@@ -25,6 +25,6 @@
 @optional
 
 /// Called to allow customization of the underlying AVCaptureConnection
-- (void)cameraView:(AWCameraView *)cameraView didCreateCaptureConnection:(AVCaptureConnection *)captureConnection withCaptureConnection:(AWCameraViewCaptureConnectionType)captureConnectionType;
+- (void)cameraView:(AWCameraView *)cameraView didCreateCaptureConnection:(AVCaptureConnection *)captureConnection withCaptureConnectionType:(AWCameraViewCaptureConnectionType)captureConnectionType;
 
 @end

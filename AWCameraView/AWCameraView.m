@@ -178,11 +178,11 @@
     self.stillImageConnection = [self.stillImageOutput connectionWithMediaType:AVMediaTypeVideo];
     self.stillImageConnection.videoOrientation = AVCaptureVideoOrientationPortrait;
     
-    if ([self.delegate respondsToSelector:@selector(cameraView:didCreateCaptureConnection:)])
-        [self.delegate cameraView:self didCreateCaptureConnection:self.stillImageConnection withCaptureConnection:AWCameraViewCaptureConnectionTypeStillImage];
+    if ([self.delegate respondsToSelector:@selector(cameraView:didCreateCaptureConnection:withCaptureConnectionType:)])
+        [self.delegate cameraView:self didCreateCaptureConnection:self.stillImageConnection withCaptureConnectionType:AWCameraViewCaptureConnectionTypeStillImage];
     
-    if ([self.delegate respondsToSelector:@selector(cameraView:didCreateCaptureConnection:)])
-        [self.delegate cameraView:self didCreateCaptureConnection:self.videoPreviewLayer.connection withCaptureConnection:AWCameraViewCaptureConnectionTypeVideoPreview];
+    if ([self.delegate respondsToSelector:@selector(cameraView:didCreateCaptureConnection:withCaptureConnectionType:)])
+        [self.delegate cameraView:self didCreateCaptureConnection:self.videoPreviewLayer.connection withCaptureConnectionType:AWCameraViewCaptureConnectionTypeVideoPreview];
     
 }
 
