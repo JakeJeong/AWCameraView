@@ -1,4 +1,5 @@
-# `AWCameraView` (fork of JBCameraView)
+# `AWCameraView` ![Build Status](https://travis-ci.org/Aw79/AWCameraView.svg?branch=master)](https://travis-ci.org/Aw79/AWCameraView)
+(fork of JBCameraView)
 
 UIView to show the camera, take a picture, preview it, return UIImage.
 
