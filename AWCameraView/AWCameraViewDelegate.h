@@ -1,6 +1,6 @@
 //
-// 	JBCameraViewDelegate.h
-//  JBCameraView
+// 	AWCameraViewDelegate.h
+//  AWCameraView
 //
 //  Created by James Billingham on 25/08/2015.
 //  Copyright (c) 2015 Cuvva Limited
@@ -8,6 +8,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AWCameraView/AWCameraViewCaptureConnectionType.h>
 
 @class AWCameraView;
 @class AVCaptureConnection;
@@ -24,6 +25,6 @@
 @optional
 
 /// Called to allow customization of the underlying AVCaptureConnection
-- (void)cameraView:(AWCameraView *)cameraView didCreateCaptureConnection:(AVCaptureConnection *)captureConnection;
+- (void)cameraView:(AWCameraView *)cameraView didCreateCaptureConnection:(AVCaptureConnection *)captureConnection withCaptureConnection:(AWCameraViewCaptureConnectionType)captureConnectionType;
 
 @end

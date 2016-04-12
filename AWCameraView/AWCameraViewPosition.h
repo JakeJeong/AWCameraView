@@ -1,6 +1,6 @@
 //
-// 	JBCameraViewPosition.h
-//  JBCameraView
+// 	AWCameraViewPosition.h
+//  AWCameraView
 //
 //  Created by James Billingham on 25/08/2015.
 //  Copyright (c) 2015 Cuvva Limited
