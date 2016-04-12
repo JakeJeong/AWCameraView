@@ -9,8 +9,8 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSUInteger, JBCameraViewPosition)
+typedef NS_ENUM(NSUInteger, AWCameraViewPosition)
 {
-  JBCameraViewPositionBack = 0,
-  JBCameraViewPositionFront
+  AWCameraViewPositionBack = 0,
+  AWCameraViewPositionFront
 };

@@ -1,16 +1,16 @@
 //
-// 	JBCameraView.m
-//  JBCameraView
+// 	AWCameraView.m
+//  AWCameraView
 //
 //  Created by Markos Charatzas on 25/06/2013.
 //  Copyright (c) 2015 Cuvva Limited
 //  Copyright (c) 2013 www.verylargebox.com
 //
 
-#import "JBCameraView.h"
+#import "AWCameraView.h"
 #import <AVFoundation/AVFoundation.h>
 
-@interface JBCameraView () <UIAlertViewDelegate>
+@interface AWCameraView () <UIAlertViewDelegate>
 
 @property (nonatomic, strong) AVCaptureSession *session;
 @property (nonatomic, strong) AVCaptureStillImageOutput *stillImageOutput;
@@ -20,7 +20,7 @@
 
 @end
 
-@implementation JBCameraView
+@implementation AWCameraView
 
 - (void)commonInit
 {
@@ -77,7 +77,7 @@
 
 - (void)takePicture
 {
-  __weak JBCameraView *weakSelf = self;
+  __weak AWCameraView *weakSelf = self;
 
   [self.stillImageOutput
    captureStillImageAsynchronouslyFromConnection:self.stillImageConnection
@@ -120,7 +120,7 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
 }
 
-- (void)setPosition:(JBCameraViewPosition)position
+- (void)setPosition:(AWCameraViewPosition)position
 {
   _position = position;
 
@@ -182,7 +182,7 @@
     [self.delegate cameraView:self didCreateCaptureConnection:self.stillImageConnection];
 }
 
-- (AVCaptureDevice *)getCameraWithPosition:(JBCameraViewPosition)position
+- (AVCaptureDevice *)getCameraWithPosition:(AWCameraViewPosition)position
 {
   AVCaptureDevicePosition avPosition = [self avPositionForPosition:position];
   NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
@@ -196,12 +196,12 @@
   return devices.firstObject;
 }
 
-- (AVCaptureDevicePosition)avPositionForPosition:(JBCameraViewPosition)position
+- (AVCaptureDevicePosition)avPositionForPosition:(AWCameraViewPosition)position
 {
   switch (position)
   {
-    case JBCameraViewPositionBack: return AVCaptureDevicePositionBack;
-    case JBCameraViewPositionFront: return AVCaptureDevicePositionFront;
+    case AWCameraViewPositionBack: return AVCaptureDevicePositionBack;
+    case AWCameraViewPositionFront: return AVCaptureDevicePositionFront;
     default: [NSException raise:@"InvalidPosition" format:@"Invalid position"];
   }
 }

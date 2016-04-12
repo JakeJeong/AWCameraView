@@ -1,6 +1,6 @@
 //
-// 	JBCameraView.h
-//  JBCameraView
+// 	AWCameraView.h
+//  AWCameraView
 //
 //  Created by Markos Charatzas on 25/06/2013.
 //  Copyright (c) 2015 Cuvva Limited
@@ -8,17 +8,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <JBCameraView/JBCameraViewPosition.h>
-#import <JBCameraView/JBCameraViewDelegate.h>
+#import <AWCameraView/AWCameraViewPosition.h>
+#import <AWCameraView/AWCameraViewDelegate.h>
 
 /// UIView to show the camera, take a picture, preview it, return UIImage
-@interface JBCameraView : UIView
+@interface AWCameraView : UIView
 
 /// Delegate for receiving events
-@property (weak, nonatomic) IBOutlet id <JBCameraViewDelegate> delegate;
+@property (weak, nonatomic) IBOutlet id <AWCameraViewDelegate> delegate;
 
 /// The camera being used - front or back; defaults to back
-@property (assign, nonatomic) JBCameraViewPosition position;
+@property (assign, nonatomic) AWCameraViewPosition position;
 
 /// Takes a still image of the current frame from the video feed
 - (void)takePicture;

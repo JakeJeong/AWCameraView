@@ -9,21 +9,21 @@
 
 #import <Foundation/Foundation.h>
 
-@class JBCameraView;
+@class AWCameraView;
 @class AVCaptureConnection;
 @class UIImage;
 
-@protocol JBCameraViewDelegate <NSObject>
+@protocol AWCameraViewDelegate <NSObject>
 
 /// Called after the picture is captured if an error didn't occur
-- (void)cameraView:(JBCameraView *)cameraView didFinishTakingPicture:(UIImage *)image withInfo:(NSDictionary *)info;
+- (void)cameraView:(AWCameraView *)cameraView didFinishTakingPicture:(UIImage *)image withInfo:(NSDictionary *)info;
 
 /// Called if an error occurs while picture is being captured
-- (void)cameraView:(JBCameraView *)cameraView didErrorOnTakePicture:(NSError *)error;
+- (void)cameraView:(AWCameraView *)cameraView didErrorOnTakePicture:(NSError *)error;
 
 @optional
 
 /// Called to allow customization of the underlying AVCaptureConnection
-- (void)cameraView:(JBCameraView *)cameraView didCreateCaptureConnection:(AVCaptureConnection *)captureConnection;
+- (void)cameraView:(AWCameraView *)cameraView didCreateCaptureConnection:(AVCaptureConnection *)captureConnection;
 
 @end

@@ -7,27 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A0D67E71B8C85CE00CCF7A5 /* JBCameraView.h in Headers */ = {isa = PBXBuildFile; fileRef = BDFD0ACC1789816200DF1A90 /* JBCameraView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1A0D67E81B8C85CE00CCF7A5 /* JBCameraViewPosition.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A0D67E41B8C847F00CCF7A5 /* JBCameraViewPosition.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1A0D67E91B8C85CE00CCF7A5 /* JBCameraViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A0D67E51B8C84A900CCF7A5 /* JBCameraViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A0D67E71B8C85CE00CCF7A5 /* AWCameraView.h in Headers */ = {isa = PBXBuildFile; fileRef = BDFD0ACC1789816200DF1A90 /* AWCameraView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A0D67E81B8C85CE00CCF7A5 /* AWCameraViewPosition.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A0D67E41B8C847F00CCF7A5 /* AWCameraViewPosition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A0D67E91B8C85CE00CCF7A5 /* AWCameraViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A0D67E51B8C84A900CCF7A5 /* AWCameraViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BDBD0B591789A26E003A7B23 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDBD0B571789A265003A7B23 /* CoreGraphics.framework */; };
 		BDBD0B5B1789A28D003A7B23 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDBD0B5A1789A28D003A7B23 /* CoreMedia.framework */; };
 		BDFD0A931789800700DF1A90 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDFD0A921789800700DF1A90 /* Foundation.framework */; };
-		BDFD0AD11789816B00DF1A90 /* JBCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFD0ACD1789816200DF1A90 /* JBCameraView.m */; };
+		BDFD0AD11789816B00DF1A90 /* AWCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFD0ACD1789816200DF1A90 /* AWCameraView.m */; };
 		BDFD0AD3178981A800DF1A90 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDFD0AD2178981A800DF1A90 /* UIKit.framework */; };
 		BDFD0AD5178981AE00DF1A90 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDFD0AD4178981AE00DF1A90 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1A0D67E41B8C847F00CCF7A5 /* JBCameraViewPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBCameraViewPosition.h; sourceTree = "<group>"; };
-		1A0D67E51B8C84A900CCF7A5 /* JBCameraViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBCameraViewDelegate.h; sourceTree = "<group>"; };
-		1ABD19441C32D71A00869D72 /* JBCameraView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = JBCameraView.podspec; sourceTree = "<group>"; };
+		1A0D67E41B8C847F00CCF7A5 /* AWCameraViewPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWCameraViewPosition.h; sourceTree = "<group>"; };
+		1A0D67E51B8C84A900CCF7A5 /* AWCameraViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWCameraViewDelegate.h; sourceTree = "<group>"; };
+		1ABD19441C32D71A00869D72 /* AWCameraView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AWCameraView.podspec; sourceTree = "<group>"; };
 		BDBD0B571789A265003A7B23 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		BDBD0B5A1789A28D003A7B23 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		BDFD0A8F1789800700DF1A90 /* libJBCameraView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJBCameraView.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDFD0A8F1789800700DF1A90 /* libAWCameraView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAWCameraView.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDFD0A921789800700DF1A90 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		BDFD0ACC1789816200DF1A90 /* JBCameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBCameraView.h; sourceTree = "<group>"; };
-		BDFD0ACD1789816200DF1A90 /* JBCameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBCameraView.m; sourceTree = "<group>"; };
+		BDFD0ACC1789816200DF1A90 /* AWCameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWCameraView.h; sourceTree = "<group>"; };
+		BDFD0ACD1789816200DF1A90 /* AWCameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWCameraView.m; sourceTree = "<group>"; };
 		BDFD0AD2178981A800DF1A90 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BDFD0AD4178981AE00DF1A90 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -51,8 +51,8 @@
 		BDFD0A861789800700DF1A90 = {
 			isa = PBXGroup;
 			children = (
-				1ABD19441C32D71A00869D72 /* JBCameraView.podspec */,
-				BDFD0A941789800700DF1A90 /* JBCameraView */,
+				1ABD19441C32D71A00869D72 /* AWCameraView.podspec */,
+				BDFD0A941789800700DF1A90 /* AWCameraView */,
 				BDFD0A911789800700DF1A90 /* Frameworks */,
 				BDFD0A901789800700DF1A90 /* Products */,
 			);
@@ -61,7 +61,7 @@
 		BDFD0A901789800700DF1A90 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BDFD0A8F1789800700DF1A90 /* libJBCameraView.a */,
+				BDFD0A8F1789800700DF1A90 /* libAWCameraView.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,15 +78,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BDFD0A941789800700DF1A90 /* JBCameraView */ = {
+		BDFD0A941789800700DF1A90 /* AWCameraView */ = {
 			isa = PBXGroup;
 			children = (
-				BDFD0ACC1789816200DF1A90 /* JBCameraView.h */,
-				BDFD0ACD1789816200DF1A90 /* JBCameraView.m */,
-				1A0D67E41B8C847F00CCF7A5 /* JBCameraViewPosition.h */,
-				1A0D67E51B8C84A900CCF7A5 /* JBCameraViewDelegate.h */,
+				BDFD0ACC1789816200DF1A90 /* AWCameraView.h */,
+				BDFD0ACD1789816200DF1A90 /* AWCameraView.m */,
+				1A0D67E41B8C847F00CCF7A5 /* AWCameraViewPosition.h */,
+				1A0D67E51B8C84A900CCF7A5 /* AWCameraViewDelegate.h */,
 			);
-			path = JBCameraView;
+			path = AWCameraView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,18 +96,18 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A0D67E71B8C85CE00CCF7A5 /* JBCameraView.h in Headers */,
-				1A0D67E81B8C85CE00CCF7A5 /* JBCameraViewPosition.h in Headers */,
-				1A0D67E91B8C85CE00CCF7A5 /* JBCameraViewDelegate.h in Headers */,
+				1A0D67E71B8C85CE00CCF7A5 /* AWCameraView.h in Headers */,
+				1A0D67E81B8C85CE00CCF7A5 /* AWCameraViewPosition.h in Headers */,
+				1A0D67E91B8C85CE00CCF7A5 /* AWCameraViewDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		BDFD0A8E1789800700DF1A90 /* JBCameraView */ = {
+		BDFD0A8E1789800700DF1A90 /* AWCameraView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BDFD0AB41789800800DF1A90 /* Build configuration list for PBXNativeTarget "JBCameraView" */;
+			buildConfigurationList = BDFD0AB41789800800DF1A90 /* Build configuration list for PBXNativeTarget "AWCameraView" */;
 			buildPhases = (
 				BDFD0A8B1789800700DF1A90 /* Sources */,
 				BDFD0A8C1789800700DF1A90 /* Frameworks */,
@@ -117,9 +117,9 @@
 			);
 			dependencies = (
 			);
-			name = JBCameraView;
+			name = AWCameraView;
 			productName = JBCameraView;
-			productReference = BDFD0A8F1789800700DF1A90 /* libJBCameraView.a */;
+			productReference = BDFD0A8F1789800700DF1A90 /* libAWCameraView.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -130,9 +130,9 @@
 			attributes = {
 				LastTestingUpgradeCheck = 0700;
 				LastUpgradeCheck = 0700;
-				ORGANIZATIONNAME = verylargebox;
+				ORGANIZATIONNAME = aw;
 			};
-			buildConfigurationList = BDFD0A8A1789800700DF1A90 /* Build configuration list for PBXProject "JBCameraView" */;
+			buildConfigurationList = BDFD0A8A1789800700DF1A90 /* Build configuration list for PBXProject "AWCameraView" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -144,7 +144,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BDFD0A8E1789800700DF1A90 /* JBCameraView */,
+				BDFD0A8E1789800700DF1A90 /* AWCameraView */,
 			);
 		};
 /* End PBXProject section */
@@ -154,7 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDFD0AD11789816B00DF1A90 /* JBCameraView.m in Sources */,
+				BDFD0AD11789816B00DF1A90 /* AWCameraView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,7 +211,7 @@
 		BDFD0AB51789800800DF1A90 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AWCameraView;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -219,7 +219,7 @@
 		BDFD0AB61789800800DF1A90 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AWCameraView;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -227,7 +227,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BDFD0A8A1789800700DF1A90 /* Build configuration list for PBXProject "JBCameraView" */ = {
+		BDFD0A8A1789800700DF1A90 /* Build configuration list for PBXProject "AWCameraView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BDFD0AB21789800800DF1A90 /* Debug */,
@@ -236,7 +236,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BDFD0AB41789800800DF1A90 /* Build configuration list for PBXNativeTarget "JBCameraView" */ = {
+		BDFD0AB41789800800DF1A90 /* Build configuration list for PBXNativeTarget "AWCameraView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BDFD0AB51789800800DF1A90 /* Debug */,
