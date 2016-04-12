@@ -39,6 +39,12 @@ cameraView.position = AWCameraViewPositionBack;
 
 Please open an issue on this repository.
 
+## Authors
+
+- Andreas Woerner <awoerner@gmx.net>
+- James Billingham <james@jamesbillingham.com> (JBCameraView)
+- Markos Charatzas <markos@qnoid.com> (JBCameraView)
+
 ## License
 
 MIT licensed - see [LICENSE](LICENSE) file
