@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
 	s.license = 'MIT'
 	s.author = { 'Andreas Woerner' => 'awoerner@gmx.net', 'James Billingham' => 'james@billingham.net', 'Markos Charatzas' => 'markos@qnoid.com' }
 
-	s.source = { git: 'https://github.com/Aw79/AWCameraView.git', tag: "v#{s.version}" }
+	s.source = { git: 'https://github.com/Aw79/AWCameraView.git', tag: "#{s.version}" }
 
 	s.requires_arc = true
 	s.ios.deployment_target = '6.0'
