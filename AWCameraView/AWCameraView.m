@@ -10,13 +10,14 @@
 #import "AWCameraView.h"
 #import <AVFoundation/AVFoundation.h>
 
-@interface AWCameraView () <UIAlertViewDelegate>
+@interface AWCameraView () <UIAlertViewDelegate, UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) AVCaptureSession *session;
 @property (nonatomic, strong) AVCaptureStillImageOutput *stillImageOutput;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *videoPreviewLayer;
 @property (nonatomic, strong) AVCaptureConnection *stillImageConnection;
 @property (nonatomic, strong) UIImageView *preview;
+@property (nonatomic) UITapGestureRecognizer *focusOnTapGestureRecognizer;
 
 @end
 
@@ -72,6 +73,24 @@
     [self.layer addSublayer:self.videoPreviewLayer];
 }
 
+- (void) setEnableFocusOnTap:(BOOL)enable {
+    _enableFocusOnTap = enable;
+    
+    if(enable) {
+        if(!self.focusOnTapGestureRecognizer) {
+            self.focusOnTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleFocusOnTap:)];
+            self.focusOnTapGestureRecognizer.numberOfTapsRequired = 1;
+            self.focusOnTapGestureRecognizer.delegate = self;
+        }
+        [self addGestureRecognizer:self.focusOnTapGestureRecognizer];
+    }
+    else {
+        self.focusOnTapGestureRecognizer.delegate = nil;
+        [self removeGestureRecognizer:self.focusOnTapGestureRecognizer];
+        self.focusOnTapGestureRecognizer = nil;
+    }
+}
+
 - (void)takePicture {
     __weak AWCameraView *weakSelf = self;
     
@@ -106,6 +125,7 @@
 }
 
 - (void)focusOnPoint:(CGPoint)point {
+    NSLog(@"focusOnPoint: %@", NSStringFromCGPoint(point));
     AVCaptureDevice *device = [self getCameraWithPosition:self.position];
     if([device isFocusPointOfInterestSupported] && [device isFocusModeSupported:AVCaptureFocusModeAutoFocus]) {
         if([device lockForConfiguration:nil]) {
@@ -117,6 +137,17 @@
             [device unlockForConfiguration];
         }
     }
+}
+
+- (void)handleFocusOnTap:(UIGestureRecognizer *)recognizer {
+    CGPoint absPoint = [recognizer locationInView:self];
+    CGPoint relPoint = CGPointMake(absPoint.x / self.frame.size.width, absPoint.y / self.frame.size.height);
+    
+    NSLog(@"handleFocusOnTap: %@ -> %@", NSStringFromCGPoint(absPoint), NSStringFromCGPoint(relPoint));
+    
+    [self focusOnPoint:relPoint];
+
+    
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {

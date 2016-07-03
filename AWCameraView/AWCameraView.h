@@ -17,8 +17,12 @@
 /// Delegate for receiving events
 @property (weak, nonatomic) IBOutlet id <AWCameraViewDelegate> delegate;
 
-/// The camera being used - front or back; defaults to back
+/// The camera-position being used - front or back; defaults to back
 @property (assign, nonatomic) AWCameraViewPosition position;
+
+/// If enabled, focus the camera-view on the position of the tap
+/// Disabled by default
+@property (assign, nonatomic) BOOL enableFocusOnTap;
 
 /// Takes a still image of the current frame from the video feed
 - (void)takePicture;
