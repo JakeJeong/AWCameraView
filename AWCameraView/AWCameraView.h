@@ -26,4 +26,7 @@
 /// Restart the session
 - (void)retakePicture;
 
+/// Focus on Point
+- (void)focusOnPoint:(CGPoint)point;
+
 @end
