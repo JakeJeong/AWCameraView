@@ -125,25 +125,23 @@
 }
 
 - (void)focusOnPoint:(CGPoint)point {
-    NSLog(@"focusOnPoint: %@", NSStringFromCGPoint(point));
     AVCaptureDevice *device = [self getCameraWithPosition:self.position];
-    if([device isFocusPointOfInterestSupported] && [device isFocusModeSupported:AVCaptureFocusModeAutoFocus]) {
-        if([device lockForConfiguration:nil]) {
-            [device setFocusPointOfInterest:point];
-            [device setFocusMode:AVCaptureFocusModeAutoFocus];
-            if ([device isExposureModeSupported:AVCaptureExposureModeAutoExpose]) {
-                [device setExposureMode:AVCaptureExposureModeAutoExpose];
-            }
-            [device unlockForConfiguration];
+    if([device lockForConfiguration:nil]) {
+        if([device isFocusPointOfInterestSupported] && [device isFocusModeSupported:AVCaptureFocusModeAutoFocus]) {
+            device.focusPointOfInterest = point;
+            device.focusMode = AVCaptureFocusModeAutoFocus;
+        }
+        if([device isExposurePointOfInterestSupported] && [device isExposureModeSupported:AVCaptureExposureModeAutoExpose]) {
+            device.focusPointOfInterest = point;
+            device.exposureMode = AVCaptureExposureModeAutoExpose;
         }
     }
+    [device unlockForConfiguration];
 }
 
 - (void)handleFocusOnTap:(UIGestureRecognizer *)recognizer {
     CGPoint absPoint = [recognizer locationInView:self];
     CGPoint relPoint = CGPointMake(absPoint.x / self.frame.size.width, absPoint.y / self.frame.size.height);
-    
-    NSLog(@"handleFocusOnTap: %@ -> %@", NSStringFromCGPoint(absPoint), NSStringFromCGPoint(relPoint));
     
     [self focusOnPoint:relPoint];
 
