@@ -36,7 +36,17 @@ AWCameraView *cameraView = [[AWCameraView alloc] initWithFrame:CGRect(320, 320)]
 cameraView.delegate = self;
 cameraView.position = AWCameraViewPositionBack;
 
+/// Take a picture
 [cameraView takePicture];
+
+/// Enable tap-on-focus for camera-view
+cameraView.enableFocusOnTap = YES;
+
+/// Focus on top-left point of camera-view
+[cameraView focusOnPoint:CGPointMake(0, 0)];
+
+/// Focus on bottom-right point of camera-view
+[cameraView focusOnPoint:CGPointMake(1, 1)];
 ```
 
 ## Support
