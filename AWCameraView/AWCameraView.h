@@ -33,4 +33,13 @@
 /// Focus on Point
 - (void)focusOnPoint:(CGPoint)point;
 
+/**
+ *  Capture start the Session;
+ */
+- (void)startCapture;
+
+/**
+ *  Capture stop the Session;
+ */
+- (void)stopCapture;
 @end

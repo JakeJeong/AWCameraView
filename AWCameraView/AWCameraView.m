@@ -58,7 +58,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    [self.session startRunning];
+//    [self.session startRunning];
 }
 
 - (void)layoutSubviews {
@@ -137,6 +137,15 @@
         }
     }
     [device unlockForConfiguration];
+}
+- (void)startCapture;
+{
+    [self.session startRunning];
+}
+
+- (void)stopCapture;
+{
+    [self.session stopRunning];
 }
 
 - (void)handleFocusOnTap:(UIGestureRecognizer *)recognizer {
