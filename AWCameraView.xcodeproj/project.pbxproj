@@ -17,6 +17,7 @@
 		BDFD0AD11789816B00DF1A90 /* AWCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFD0ACD1789816200DF1A90 /* AWCameraView.m */; };
 		BDFD0AD3178981A800DF1A90 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDFD0AD2178981A800DF1A90 /* UIKit.framework */; };
 		BDFD0AD5178981AE00DF1A90 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDFD0AD4178981AE00DF1A90 /* AVFoundation.framework */; };
+		CED31DF81D2B957400C101D4 /* AWCameraViewFlashMode.h in Headers */ = {isa = PBXBuildFile; fileRef = CED31DF71D2B94B100C101D4 /* AWCameraViewFlashMode.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		BDFD0ACD1789816200DF1A90 /* AWCameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWCameraView.m; sourceTree = "<group>"; };
 		BDFD0AD2178981A800DF1A90 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BDFD0AD4178981AE00DF1A90 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		CED31DF71D2B94B100C101D4 /* AWCameraViewFlashMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWCameraViewFlashMode.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				BDFD0ACC1789816200DF1A90 /* AWCameraView.h */,
 				BDFD0ACD1789816200DF1A90 /* AWCameraView.m */,
 				1A0D67E41B8C847F00CCF7A5 /* AWCameraViewPosition.h */,
+				CED31DF71D2B94B100C101D4 /* AWCameraViewFlashMode.h */,
 				1A0D67E51B8C84A900CCF7A5 /* AWCameraViewDelegate.h */,
 				7A5F20941CBD875800182EF3 /* AWCameraViewCaptureConnectionType.h */,
 			);
@@ -100,6 +103,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A0D67E71B8C85CE00CCF7A5 /* AWCameraView.h in Headers */,
+				CED31DF81D2B957400C101D4 /* AWCameraViewFlashMode.h in Headers */,
 				7A5F20951CBD875D00182EF3 /* AWCameraViewCaptureConnectionType.h in Headers */,
 				1A0D67E81B8C85CE00CCF7A5 /* AWCameraViewPosition.h in Headers */,
 				1A0D67E91B8C85CE00CCF7A5 /* AWCameraViewDelegate.h in Headers */,

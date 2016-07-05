@@ -230,7 +230,11 @@
         [self.delegate cameraView:self didCreateCaptureConnection:self.videoPreviewLayer.connection withCaptureConnectionType:AWCameraViewCaptureConnectionTypeVideoPreview];
     }
 }
-
+- (void)setFlashMode:(AWCameraViewFlashMode)flashMode
+{
+    AVCaptureDevice *device = [self getCameraWithPosition:self.position];
+    device.flashMode = (AVCaptureFlashMode)flashMode;
+}
 - (AVCaptureDevice *)getCameraWithPosition:(AWCameraViewPosition)position {
     AVCaptureDevicePosition avPosition = [self avPositionForPosition:position];
     NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];

@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 #import <AWCameraView/AWCameraViewPosition.h>
 #import <AWCameraView/AWCameraViewDelegate.h>
+#import <AWCameraView/AWCameraViewFlashMode.h>
 
 /// UIView to show the camera, take a picture, preview it, return UIImage
 @interface AWCameraView : UIView
@@ -19,6 +20,8 @@
 
 /// The camera-position being used - front or back; defaults to back
 @property (assign, nonatomic) AWCameraViewPosition position;
+
+@property (assign, nonatomic) AWCameraViewFlashMode flashMode;
 
 /// If enabled, focus the camera-view on the position of the tap
 /// Disabled by default
