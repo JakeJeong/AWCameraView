@@ -21,6 +21,9 @@
 /// The camera-position being used - front or back; defaults to back
 @property (assign, nonatomic) AWCameraViewPosition position;
 
+/**
+ *  The camera flash 
+ */
 @property (assign, nonatomic) AWCameraViewFlashMode flashMode;
 
 /// If enabled, focus the camera-view on the position of the tap
@@ -45,4 +48,9 @@
  *  Capture stop the Session;
  */
 - (void)stopCapture;
+
+/**
+ *  Flash support flag
+ */
+- (BOOL)isSupportFlashMode;
 @end

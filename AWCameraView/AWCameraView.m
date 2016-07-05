@@ -58,7 +58,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-//    [self.session startRunning];
+    //    [self.session startRunning];
 }
 
 - (void)layoutSubviews {
@@ -153,7 +153,12 @@
     CGPoint relPoint = CGPointMake(absPoint.x / self.frame.size.width, absPoint.y / self.frame.size.height);
     
     [self focusOnPoint:relPoint];
-
+    
+    
+}
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    CGPoint location = [gestureRecognizer locationInView:self];
     
 }
 
@@ -232,8 +237,24 @@
 }
 - (void)setFlashMode:(AWCameraViewFlashMode)flashMode
 {
+    _flashMode = flashMode;
+    
     AVCaptureDevice *device = [self getCameraWithPosition:self.position];
-    device.flashMode = (AVCaptureFlashMode)flashMode;
+    if ([device hasTorch] && [device hasFlash]) {
+        [device lockForConfiguration:nil];
+        [device setTorchMode:(AVCaptureTorchMode)flashMode];
+        [device setFlashMode:(AVCaptureFlashMode)flashMode];
+        [device unlockForConfiguration];
+    }
+    
+}
+- (BOOL)isSupportFlashMode;
+{
+    AVCaptureDevice *device = [self getCameraWithPosition:self.position];
+    if ([device hasTorch] && [device hasFlash]) {
+        return YES;
+    }
+    return NO;
 }
 - (AVCaptureDevice *)getCameraWithPosition:(AWCameraViewPosition)position {
     AVCaptureDevicePosition avPosition = [self avPositionForPosition:position];
