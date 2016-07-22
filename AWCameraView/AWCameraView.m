@@ -240,18 +240,17 @@
     _flashMode = flashMode;
     
     AVCaptureDevice *device = [self getCameraWithPosition:self.position];
-    if ([device hasTorch] && [device hasFlash]) {
-        [device lockForConfiguration:nil];
-        [device setTorchMode:(AVCaptureTorchMode)flashMode];
-        [device setFlashMode:(AVCaptureFlashMode)flashMode];
+    if ([device lockForConfiguration:nil]) {
+        if ([device isFlashModeSupported:(AVCaptureFlashMode)flashMode]) {
+            [device setFlashMode:(AVCaptureFlashMode)flashMode];
+        }
         [device unlockForConfiguration];
     }
-    
 }
 - (BOOL)isSupportFlashMode;
 {
     AVCaptureDevice *device = [self getCameraWithPosition:self.position];
-    if ([device hasTorch] && [device hasFlash]) {
+    if ([device hasFlash]) {
         return YES;
     }
     return NO;
