@@ -30,6 +30,10 @@
 /// Disabled by default
 @property (assign, nonatomic) BOOL enableFocusOnTap;
 
+/// If enabled, Draw square animations on touch points
+/// Disabled by default
+@property (assign, nonatomic) BOOL enableFocusOnSqaureDraw;
+
 /// Takes a still image of the current frame from the video feed
 - (void)takePicture;
 

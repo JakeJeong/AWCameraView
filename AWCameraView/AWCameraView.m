@@ -19,6 +19,8 @@
 @property (nonatomic, strong) UIImageView *preview;
 @property (nonatomic) UITapGestureRecognizer *focusOnTapGestureRecognizer;
 
+@property (nonatomic, strong) UIView * sqaureView;
+
 @end
 
 @implementation AWCameraView
@@ -71,6 +73,10 @@
     
     self.videoPreviewLayer.frame = frame;
     [self.layer addSublayer:self.videoPreviewLayer];
+    
+    if (self.enableFocusOnSqaureDraw && self.sqaureView != nil) {
+        [self bringSubviewToFront:self.sqaureView];
+    }
 }
 
 - (void) setEnableFocusOnTap:(BOOL)enable {
@@ -93,7 +99,6 @@
 
 - (void)takePicture {
     __weak AWCameraView *weakSelf = self;
-    
     [self.stillImageOutput
      captureStillImageAsynchronouslyFromConnection:self.stillImageConnection
      completionHandler:^(CMSampleBufferRef sampleBuffer, NSError *error) {
@@ -154,12 +159,26 @@
     
     [self focusOnPoint:relPoint];
     
-    
-}
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
-{
-    CGPoint location = [gestureRecognizer locationInView:self];
-    
+    if (self.enableFocusOnSqaureDraw) {
+        self.sqaureView = [[UIView alloc]initWithFrame:CGRectMake(absPoint.x-(60/2), absPoint.y-(60/2), 60, 60)];
+        self.sqaureView.backgroundColor = [UIColor clearColor];
+        self.sqaureView.layer.borderColor = [UIColor yellowColor].CGColor;
+        self.sqaureView.layer.borderWidth = 1.0f;
+        self.sqaureView.layer.cornerRadius = 4.0f;
+        self.sqaureView.clipsToBounds = YES;
+        [self addSubview:self.sqaureView];
+        
+        [UIView animateWithDuration:0.5f animations:^{
+            self.sqaureView.transform = CGAffineTransformMakeScale(0.7, 0.7);
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.5f animations:^{
+                self.sqaureView.transform = CGAffineTransformIdentity;
+            } completion:^(BOOL finished) {
+                [self.sqaureView removeFromSuperview];
+                self.sqaureView = nil;
+            }];
+        }];
+    }
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
